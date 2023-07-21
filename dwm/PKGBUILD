@@ -1,0 +1,22 @@
+pkgname=dwm-p3ng0s
+pkgver=0.1
+pkgrel=1
+pkgdesc="dwm fork for p3ng0s"
+arch=("any")
+url="https://github.com/p3ng0s/dwm-6.2"
+license=('NONE')
+depends=('libx11' 'libxinerama' 'fontconfig' 'libxft' 'libxcb' 'make' 'gcc')
+#source=("git://github.com/p3ng0s/dwm-6.2")
+#sha1sums=('SKIP')
+
+build() {
+	git clone https://github.com/p3ng0s/dwm-6.2 .
+	make
+}
+
+package() {
+	install -D -m755 ./dwm $pkgdir/usr/local/bin/dwm
+	install -D -m755 ./dwm-live $pkgdir/usr/local/bin/dwm-live
+	install -D -m755 ./dwm-light $pkgdir/usr/local/bin/dwm-light
+	install -D -m644 ./dwm.1 $pkgdir/usr/local/man/man1/dwm.1
+}

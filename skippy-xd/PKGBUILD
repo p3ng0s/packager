@@ -1,0 +1,20 @@
+pkgname=skippy-xd-p3ng0s
+pkgver=0.1
+pkgrel=1
+pkgdesc="xkippy-xd fork for p3ng0s"
+arch=("any")
+url="https://github.com/p3ng0s/skippy-xd"
+license=('NONE')
+depends=('libx11' 'libxext' 'libxfixes' 'libxdamage' 'libxcomposite' 'libxrender' 'libxinerama' 'fontconfig' 'freetype2' 'libxft' 'libxcb' 'make' 'libjpeg-turbo' 'gcc')
+#source=("git://github.com/p3ng0s/skippy-xd")
+#sha1sums=('SKIP')
+
+build() {
+	git clone https://github.com/p3ng0s/skippy-xd .
+	make
+}
+
+package() {
+	install -D -m755 ./skippy-xd $pkgdir/usr/bin/skippy-xd
+	install -D -m644 ./skippy-xd.sample.rc $pkgdir/etc/xdg/skippy-xd.rc
+}

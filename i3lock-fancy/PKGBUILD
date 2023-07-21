@@ -1,0 +1,20 @@
+pkgname=i3lock-fancy-p3ng0s
+pkgver=0.1
+pkgrel=1
+pkgdesc="i3lock-fancy fork for p3ng0s"
+arch=("any")
+url="https://github.com/p3ng0s/i3lock-fancy"
+license=('NONE')
+depends=('i3lock')
+#source=("git://github.com/p3ng0s/dmenu-4.9")
+#sha1sums=('SKIP')
+
+build() {
+	git clone https://github.com/p3ng0s/i3lock-fancy .
+}
+
+package() {
+	install -Dm755 i3lock-fancy          -t $pkgdir/usr/bin/i3lock-fancy
+	install -Dm644 icons/*               -t $pkgdir/usr/share/i3lock-fancy/icons
+	install -Dm644 doc/i3lock-fancy.1    -t $pkgdir/usr/local/man/man1
+}

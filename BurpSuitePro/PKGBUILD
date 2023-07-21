@@ -1,0 +1,19 @@
+pkgname=burpsuite-p3ng0s
+pkgver=0.1
+pkgrel=1
+pkgdesc="burpsuite package for p3ng0s"
+arch=("any")
+url="https://portswigger.net/"
+license=('NONE')
+depends=('jre-openjdk' 'jdk-openjdk')
+#sha1sums=('SKIP')
+
+build() {
+	wget 'https://portswigger-cdn.net/burp/releases/download?product=community&version=2023.6.2&type=Jar' -o burp.jar
+	echo -e "#!/bin/bash\njava -jar /opt/pentest/burp.jar" > BurpSuitePro
+}
+
+package() {
+	install -D -m755 ./BurpSuitePro $pkgdir/usr/bin/BurpSuitePro
+	install -D -m644 ./burp.jar $pkgdir/opt/pentest/burp.jar
+}

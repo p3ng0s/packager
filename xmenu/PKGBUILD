@@ -1,0 +1,25 @@
+pkgname=xmenu-p3ng0s
+pkgver=0.1
+pkgrel=1
+pkgdesc="xmenu fork for p3ng0s"
+arch=("any")
+url="https://github.com/p3ng0s/xmenu"
+license=('NONE')
+depends=('libx11' 'libxinerama' 'imlib2' 'fontconfig' 'freetype2' 'libxft' 'libxcb' 'make' 'gcc')
+#source=("git://github.com/p3ng0s/xmenu")
+#sha1sums=('SKIP')
+
+build() {
+	git clone https://github.com/p3ng0s/xmenu .
+	make
+}
+
+package() {
+	install -D -m755 ./xmenu $pkgdir/usr/local/bin/xmenu
+	install -D -m755 ./xmenu_run $pkgdir/usr/local/bin/xmenu_run
+	install -D -m644 ./xmenu.1 $pkgdir/usr/local/man/man1/xmenu.1
+	ICONS=( $(ls ./icons/) )
+	for ico in ${ICONS[*]}; do
+		install -D -m644 ./icons/$ico $pkgdir/etc/p3ng0s/icons/$ico
+	done
+}

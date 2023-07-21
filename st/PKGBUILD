@@ -1,0 +1,20 @@
+pkgname=st-p3ng0s
+pkgver=0.1
+pkgrel=1
+pkgdesc="st fork for p3ng0s"
+arch=("any")
+url="https://github.com/p3ng0s/st-0.8.2"
+license=('NONE')
+depends=('libx11' 'libxrender' 'fontconfig' 'freetype2' 'libxft' 'make' 'gcc')
+#source=("git://github.com/p3ng0s/st-0.8.2")
+#sha1sums=('SKIP')
+
+build() {
+	git clone https://github.com/p3ng0s/st-0.8.2 .
+	make
+}
+
+package() {
+	install -D -m755 ./st $pkgdir/usr/local/bin/st
+	install -D -m644 ./st.1 $pkgdir/usr/local/man/man1/st.1
+}

@@ -1,0 +1,20 @@
+pkgname=wmname-p3ng0s
+pkgver=0.1
+pkgrel=1
+pkgdesc="wmname fork for p3ng0s"
+arch=("any")
+url="https://github.com/p3ng0s/wmname"
+license=('NONE')
+depends=('libx11' 'libxinerama' 'fontconfig' 'freetype2' 'libxft' 'libxcb' 'make' 'gcc')
+#source=("git://github.com/p3ng0s/wmname")
+#sha1sums=('SKIP')
+
+build() {
+	git clone https://github.com/p3ng0s/wmname .
+	make
+}
+
+package() {
+	install -D -m755 ./wmname $pkgdir/usr/local/bin/wmname
+	install -D -m644 ./wmname.1 $pkgdir/usr/local/man/man1/wmname.1
+}
