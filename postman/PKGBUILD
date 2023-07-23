@@ -1,0 +1,26 @@
+pkgname=postman-p3ng0s
+pkgver=0.1
+pkgrel=1
+pkgdesc="postman package for p3ng0s"
+arch=("any")
+url="https://portswigger.net/"
+license=('NONE')
+depends=()
+#sha1sums=('SKIP')
+
+build() {
+	curl 'https://dl.pstmn.io/download/latest/linux_64' --output postman.tar.xz
+	tar xf postman.tar.xz
+}
+
+package() {
+	cd Postman/app
+	ls
+	#install -D -m755 ./Postman/app/Postman $pkgdir/opt/dev/postman/Postman
+	#install -D -m755 ./Postman/app/postman $pkgdir/opt/dev/postman/postman
+	#install -D -m755 ./Postman/app/chrome-sandbox $pkgdir/opt/dev/postman/chrome-sandbox
+	#install -D -m755 ./Postman/app/chrome_crashpad_handler $pkgdir/opt/dev/postman/chrome_crashpad_handler
+	#install -D -m755 ./Postman/app/chrome_crashpad_handler $pkgdir/opt/dev/postman/chrome_crashpad_handler
+	#install -D -m755 ./BurpSuitePro $pkgdir/usr/bin/BurpSuitePro
+	#install -D -m644 ./burp.jar $pkgdir/opt/dev/postman
+}

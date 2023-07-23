@@ -9,7 +9,7 @@ depends=('jre-openjdk' 'jdk-openjdk')
 #sha1sums=('SKIP')
 
 build() {
-	wget 'https://portswigger-cdn.net/burp/releases/download?product=community&version=2023.6.2&type=Jar' -o burp.jar
+	curl 'https://portswigger-cdn.net/burp/releases/download?product=community&version=2023.6.2&type=Jar' --output burp.jar
 	echo -e "#!/bin/bash\njava -jar /opt/pentest/burp.jar" > BurpSuitePro
 }
 

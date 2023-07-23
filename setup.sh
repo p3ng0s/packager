@@ -10,6 +10,7 @@
 # Description:
 #
 
-
 mkdir repo
 repo-add -n repo/p3ng0s.db.tar.gz $(find . -name "*.tar.zst")
+
+mv */*.tar.zst ./repo/
