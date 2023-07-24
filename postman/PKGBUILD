@@ -11,16 +11,13 @@ depends=()
 build() {
 	curl 'https://dl.pstmn.io/download/latest/linux_64' --output postman.tar.xz
 	tar xf postman.tar.xz
+	echo -e "#!/bin/bash\n/opt/dev/postman/postman" > postman
 }
 
 package() {
-	cd Postman/app
-	ls
-	#install -D -m755 ./Postman/app/Postman $pkgdir/opt/dev/postman/Postman
-	#install -D -m755 ./Postman/app/postman $pkgdir/opt/dev/postman/postman
-	#install -D -m755 ./Postman/app/chrome-sandbox $pkgdir/opt/dev/postman/chrome-sandbox
-	#install -D -m755 ./Postman/app/chrome_crashpad_handler $pkgdir/opt/dev/postman/chrome_crashpad_handler
-	#install -D -m755 ./Postman/app/chrome_crashpad_handler $pkgdir/opt/dev/postman/chrome_crashpad_handler
-	#install -D -m755 ./BurpSuitePro $pkgdir/usr/bin/BurpSuitePro
-	#install -D -m644 ./burp.jar $pkgdir/opt/dev/postman
+	install -D -m755 postman $pkgdir/usr/bin/postman
+	cd Postman/app/
+
+	find . -perm 755 -type f | xargs -I {} install -D -m755 {} $pkgdir/opt/dev/postman/{}
+	find . -perm 644 -type f | xargs -I {} install -D -m644 {} $pkgdir/opt/dev/postman/{}
 }
