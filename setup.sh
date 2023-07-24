@@ -10,7 +10,18 @@
 # Description:
 #
 
+REPOS=( $(find -type d | grep -wv "\./\.*" | tail -n +2) )
+
 mkdir repo
+
+for d in ${REPOS[*]}; do
+	pwd
+	cd $d
+	makepkg
+	cd ..
+	pwd
+done
+
 repo-add -n repo/p3ng0s.db.tar.gz $(find . -name "*.tar.zst")
 
 mv */*.tar.zst ./repo/
