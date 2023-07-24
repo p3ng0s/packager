@@ -5,7 +5,7 @@ pkgdesc="scripts for p3ng0s"
 arch=("any")
 url="https://github.com/p3ng0s/scripts"
 license=('NONE')
-depends=('xautomation' 'cowsay' 'fortune' 'fortune-mod' 'lolcat' 'figlet' 'doge' 'xclip' 'zathura' 'man')
+depends=('xautomation' 'cowsay' 'fortune-mod' 'lolcat' 'figlet' 'doge' 'xclip' 'zathura' 'man')
 #source=("git://github.com/p3ng0s/scripts")
 #sha1sums=('SKIP')
 
@@ -14,7 +14,6 @@ build() {
 }
 
 package() {
-	ls
 	SCRIPTS=( $(ls .) )
 	for script in ${SCRIPTS[*]}; do
 		install -D -m755 ./$script $pkgdir/usr/local/bin/$script
