@@ -9,7 +9,7 @@ depends=('neo4j-community' 'electron')
 #sha1sums=('SKIP')
 
 build() {
-	curl 'https://objects.githubusercontent.com/github-production-release-asset-2e65be/56452110/dd560c9b-de40-4347-8632-1d368a2b6292?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230725%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230725T202933Z&X-Amz-Expires=300&X-Amz-Signature=c7c8f8fe70a1b03dc9e2f555f78cdd19fca23e4aae13cdd18bfdec2607497ac4&X-Amz-SignedHeaders=host&actor_id=19672114&key_id=0&repo_id=56452110&response-content-disposition=attachment%3B%20filename%3DBloodHound-linux-x64.zip&response-content-type=application%2Foctet-stream' --output bloodhound.zip
+	curl -L 'https://github.com/BloodHoundAD/BloodHound/releases/download/v4.3.1/BloodHound-linux-arm64.zip' --output bloodhound.zip
 	unzip bloodhound.zip
 	echo -e "#!/bin/bash\n/opt/pentest/BloodHound/BloodHound --no-sandbox" > Bloodhound
 }
