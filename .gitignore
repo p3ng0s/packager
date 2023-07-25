@@ -1,4 +1,10 @@
 repo/
+ckbcomp/
+mkinitcpio-openswap/
+neo4j-community/
+calamares/
+bloodhound/
+python-bloodhound/
 repo2/
 */pkg/
 */src/

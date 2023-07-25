@@ -10,14 +10,21 @@
 # Description:
 #
 
-REPOS=( $(find -type d | grep -wv "\./\.*" | tail -n +2) )
+AUR=("https://aur.archlinux.org/neo4j-community.git" "https://aur.archlinux.org/python-bloodhound.git" \
+	"https://aur.archlinux.org/calamares.git" "https://aur.archlinux.org/ckbcomp.git" \
+	"https://aur.archlinux.org/packages/mkinitcpio-openswap")
+
+for u in ${AUR[*]}; do
+	git clone $u
+done
+
+REPOS=( $(find -type d | grep -wv "\./\.*" | grep -wv "\.git" | tail -n +2) )
 
 for d in ${REPOS[*]}; do
-	pwd
+	SAVE_TMP=$(pwd)
 	cd $d
 	makepkg
-	cd ..
-	pwd
+	cd $SAVE_TMP
 done
 
 mkdir repo
@@ -25,6 +32,5 @@ repo-add -n repo/p3ng0s.db.tar.gz $(find . -name "*.tar.zst")
 
 mv */*.tar.zst ./repo/
 
-# cleanup
 rm -rf */src/
 rm -rf */pkg/
