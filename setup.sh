@@ -12,7 +12,7 @@
 
 AUR=("https://aur.archlinux.org/neo4j-community.git" "https://aur.archlinux.org/python-bloodhound.git" \
 	"https://aur.archlinux.org/calamares.git" "https://aur.archlinux.org/ckbcomp.git" \
-	"https://aur.archlinux.org/packages/mkinitcpio-openswap")
+	"https://aur.archlinux.org/mkinitcpio-openswap.git")
 
 for u in ${AUR[*]}; do
 	git clone $u
