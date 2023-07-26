@@ -11,7 +11,7 @@ depends=('neo4j-community' 'electron')
 build() {
 	curl -L 'https://github.com/BloodHoundAD/BloodHound/releases/download/v4.3.1/BloodHound-linux-arm64.zip' --output bloodhound.zip
 	unzip bloodhound.zip
-	echo -e "#!/bin/bash\n/opt/pentest/BloodHound/BloodHound --no-sandbox" > Bloodhound
+	echo -e "#!/bin/bash\n/opt/pentest/BloodHound/BloodHound" > Bloodhound
 }
 
 package() {

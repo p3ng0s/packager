@@ -1,7 +1,7 @@
-pkgname=havoc-p3ng0s
+pkgname=havoc-client-p3ng0s
 pkgver=0.1
 pkgrel=1
-pkgdesc="havoc package for p3ng0s"
+pkgdesc="havoc client package for p3ng0s"
 arch=("any")
 url="https://github.com/HavocFramework/Havoc"
 license=('NONE')
@@ -11,10 +11,14 @@ depends=('git' 'gcc' 'base-devel' 'cmake' 'make' 'fontconfig' 'glu' 'gtest' 'spd
 build() {
 	git clone 'https://github.com/HavocFramework/Havoc' .
 	git checkout dev
-	make
+	make client-build
 	ls
+	echo -e "#!/bin/bash\n/opt/pentest/havoc/havoc client" > havocclient
 }
 
 package() {
-ls
+	install -D -m755 havocclient $pkgdir/usr/bin/havocclient
+
+	find . -perm 755 -type f | xargs -I {} install -D -m755 {} $pkgdir/opt/pentest/client/{}
+	find . -perm 644 -type f | xargs -I {} install -D -m644 {} $pkgdir/opt/pentest/client/{}
 }
