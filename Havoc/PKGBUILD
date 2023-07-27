@@ -13,12 +13,12 @@ build() {
 	git checkout dev
 	make client-build
 	ls
-	echo -e "#!/bin/bash\n/opt/pentest/havoc/havoc client" > havocclient
+	echo -e "#!/bin/bash\n/opt/pentest/havoc/havoc/client/Havoc" > havocclient
 }
 
 package() {
 	install -D -m755 havocclient $pkgdir/usr/bin/havocclient
 
-	find . -perm 755 -type f | xargs -I {} install -D -m755 {} $pkgdir/opt/pentest/client/{}
-	find . -perm 644 -type f | xargs -I {} install -D -m644 {} $pkgdir/opt/pentest/client/{}
+	find . -perm 755 -type f | xargs -I {} install -D -m755 {} $pkgdir/opt/pentest/havoc/{}
+	find . -perm 644 -type f | xargs -I {} install -D -m644 {} $pkgdir/opt/pentest/havoc/{}
 }
