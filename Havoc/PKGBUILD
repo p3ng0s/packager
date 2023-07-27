@@ -13,7 +13,7 @@ build() {
 	git checkout dev
 	make client-build
 	ls
-	echo -e "#!/bin/bash\n/opt/pentest/havoc/havoc/client/Havoc" > havocclient
+	echo -e "#!/bin/bash\n/opt/pentest/havoc/client/Havoc" > havocclient
 }
 
 package() {
