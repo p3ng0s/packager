@@ -1,0 +1,19 @@
+pkgname=autologon-p3ng0s
+pkgver=0.1
+pkgrel=1
+pkgdesc="autologon system for p3ng0s live"
+arch=("any")
+url="https://github.com/p3ng0s"
+license=('NONE')
+depends=()
+#sha1sums=('SKIP')
+
+build() {
+	echo "[Service]" > autologin.conf
+	echo "ExecStart=" >> autologin.conf
+	echo "ExecStart=-/sbin/agetty --autologin p4p1-live --noclear %I 38400 linux" >> autologin.conf
+}
+
+package() {
+	install -D -m644 autologin.conf $pkgdir/etc/systemd/system/getty\@tty1.service.d/autologin.conf
+}
