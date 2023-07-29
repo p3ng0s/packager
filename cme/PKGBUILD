@@ -1,0 +1,19 @@
+pkgname=cme-p3ng0s
+pkgver=0.1
+pkgrel=1
+pkgdesc="cme package for p3ng0s"
+arch=("any")
+url="https://flipperzero.one/update"
+license=('NONE')
+#depends=()
+#sha1sums=('SKIP')
+
+build() {
+	curl -L 'https://github.com/Porchetta-Industries/CrackMapExec/releases/download/v5.4.0/cme-ubuntu-latest-3.11.zip' --output cme.zip
+	unzip cme.zip
+	ls
+}
+
+package() {
+	install -D -m755 cme $pkgdir/usr/bin/cme
+}

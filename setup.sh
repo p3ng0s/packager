@@ -13,8 +13,13 @@
 AUR=("https://aur.archlinux.org/neo4j-community.git" "https://aur.archlinux.org/python-bloodhound.git" \
 	"https://aur.archlinux.org/calamares.git" "https://aur.archlinux.org/ckbcomp.git" \
 	"https://aur.archlinux.org/mkinitcpio-openswap.git" "https://aur.archlinux.org/responder.git" \
-	"https://aur.archlinux.org/font-symbola.git")
-#	"https://aur.archlinux.org/python-pypykatz.git" "https://aur.archlinux.org/crackmapexec.git")
+	"https://aur.archlinux.org/font-symbola.git" "https://aur.archlinux.org/python-minikerberos.git" \
+	"https://aur.archlinux.org/python-msldap.git" "https://aur.archlinux.org/python-asysocks.git" \
+	"https://aur.archlinux.org/python-pypykatz.git" "https://aur.archlinux.org/python-winacl.git" \
+	"https://aur.archlinux.org/python-winsspi.git" "https://aur.archlinux.org/python-aiosmb.git" \
+	"https://aur.archlinux.org/python-aiowinreg.git" "https://aur.archlinux.org/python-aesedb.git" \
+	"https://aur.archlinux.org/python-unicrypto.git")
+#	"https://aur.archlinux.org/ruby-evil-winrm.git" "https://aur.archlinux.org/ruby-winrm.git" "https://aur.archlinux.org/ruby-winrm-fs.git")
 
 for u in ${AUR[*]}; do
 	git clone $u
