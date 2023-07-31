@@ -8,6 +8,7 @@ bloodhound/
 python-bloodhound/
 python-aesedb/
 python-aiosmb/
+python-asyauth/
 python-asysocks/
 python-aiowinreg/
 python-minikerberos/
@@ -20,6 +21,8 @@ ruby-evil-winrm/
 font-symbola/
 ruby-winrm/
 ruby-winrm-fs/
+i3lock-fancy-git/
+emojify/
 repo2/
 */pkg/
 */src/
