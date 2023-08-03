@@ -9,7 +9,7 @@ license=('NONE')
 #sha1sums=('SKIP')
 
 build() {
-	curl -L 'https://github.com/Porchetta-Industries/CrackMapExec/releases/download/v5.4.0/cme-ubuntu-latest-3.11.zip' --output cme.zip
+	curl -Ls "https://api.github.com/repos/Porchetta-Industries/CrackMapExec/releases/latest" | jq -r '.assets[5].browser_download_url' | xargs -I {} curl "{}" --output cme.zip
 	unzip cme.zip
 	ls
 }
