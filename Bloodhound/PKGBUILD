@@ -9,7 +9,7 @@ depends=('neo4j-community' 'electron')
 #sha1sums=('SKIP')
 
 build() {
-	curl -Ls "https://api.github.com/repos/BloodHoundAD/BloodHound/releases/latest" | jq -r '.assets[4].browser_download_url' | xargs -I {} curl '{}' --output bloodhound.zip
+	curl -Ls "https://api.github.com/repos/BloodHoundAD/BloodHound/releases/latest" | jq -r '.assets[4].browser_download_url' | xargs -I {} curl -L '{}' --output bloodhound.zip
 	unzip bloodhound.zip
 	echo -e "#!/bin/bash\n/opt/pentest/BloodHound/BloodHound" > Bloodhound
 }
