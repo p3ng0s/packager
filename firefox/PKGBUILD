@@ -1,0 +1,20 @@
+pkgname=firefox-config-p3ng0s
+pkgver=0.1
+pkgrel=1
+pkgdesc="firefox config for p3ng0s"
+arch=("any")
+url="https://flipperzero.one/update"
+license=('NONE')
+#depends=()
+#sha1sums=('SKIP')
+
+build() {
+	cp -r ../data/ .
+}
+
+package() {
+	pwd
+	ls -la
+	find ./data/ -perm 755 -type f | xargs -I {} install -D -m755 {} $pkgdir/etc/skel/.mozilla/firefox/{}
+	find ./data -perm 644 -type f | xargs -I {} install -D -m644 {} $pkgdir/etc/skel/.mozilla/firefox/{}
+}
