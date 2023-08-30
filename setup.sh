@@ -10,7 +10,8 @@
 # Description:
 #
 
-AUR=("https://aur.archlinux.org/neo4j-community.git" "https://aur.archlinux.org/python-bloodhound.git" \
+AUR=("https://aur.archlinux.org/scala.git" \
+	"https://aur.archlinux.org/neo4j-community.git" "https://aur.archlinux.org/python-bloodhound.git" \
 	"https://aur.archlinux.org/calamares.git" "https://aur.archlinux.org/ckbcomp.git" \
 	"https://aur.archlinux.org/mkinitcpio-openswap.git" "https://aur.archlinux.org/responder.git" \
 	"https://aur.archlinux.org/font-symbola.git" "https://aur.archlinux.org/python-minikerberos.git" \

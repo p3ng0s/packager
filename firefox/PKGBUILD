@@ -9,7 +9,8 @@ license=('NONE')
 #sha1sums=('SKIP')
 
 build() {
-	cp -r ../data/ .
+	cp -r ../data/p3ng0s.default/ .
+	cp -r ../data/profiles.ini .
 }
 
 package() {
