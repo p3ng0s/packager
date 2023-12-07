@@ -5,7 +5,7 @@ pkgdesc="burpsuite package for p3ng0s"
 arch=("any")
 url="https://portswigger.net/"
 license=('NONE')
-depends=('jre-openjdk' 'jdk-openjdk')
+depends=('java-runtime-common')
 #sha1sums=('SKIP')
 
 build() {
