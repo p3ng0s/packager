@@ -1,0 +1,20 @@
+pkgname=svkdb-p3ng0s
+pkgver=0.1
+pkgrel=1
+pkgdesc="svkdbfork for p3ng0s"
+arch=("any")
+url="https://github.com/p3ng0s/svkbd"
+license=('NONE')
+depends=('libx11' 'libxinerama' 'fontconfig' 'libxft' 'libxcb' 'make' 'gcc')
+#source=("git://github.com/p3ng0s/dwm-6.2")
+#sha1sums=('SKIP')
+
+build() {
+	git clone https://github.com/p3ng0s/svkbd .
+	make
+}
+
+package() {
+	install -D -m755 ./svkbd-p3ng0s $pkgdir/usr/local/bin/svkbd-p3ng0s
+	install -D -m644 ./svkbd.1 $pkgdir/usr/local/man/man1/svkbd.1
+}
