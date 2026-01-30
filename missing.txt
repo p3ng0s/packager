@@ -1,0 +1,8 @@
+python-pytest
+fontforge
+
+  -> ckbcomp - testing
+  -> mkinitcpio-openswap - testing
+  -> hwinfo - ok
+  -> kpmcore>=24.01.75 - ok
+  -> libpwquality - ok

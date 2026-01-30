@@ -20,7 +20,9 @@ AUR=("https://aur.archlinux.org/scala.git" \
 	"https://aur.archlinux.org/python-winsspi.git" "https://aur.archlinux.org/python-aiosmb.git" \
 	"https://aur.archlinux.org/python-aiowinreg.git" "https://aur.archlinux.org/python-aesedb.git" \
 	"https://aur.archlinux.org/python-unicrypto.git" "https://aur.archlinux.org/python-asyauth.git" \
-	"https://aur.archlinux.org/i3lock-fancy-git.git" "https://aur.archlinux.org/dracula-gtk-theme.git" )
+	"https://aur.archlinux.org/i3lock-fancy-git.git" "https://aur.archlinux.org/dracula-gtk-theme.git" \
+	"https://aur.archlinux.org/ckbcomp.git" "https://aur.archlinux.org/mkinitcpio-openswap.git" \
+	"https://aur.archlinux.org/dislocker.git")
 #	"https://aur.archlinux.org/ruby-evil-winrm.git" "https://aur.archlinux.org/ruby-winrm.git" "https://aur.archlinux.org/ruby-winrm-fs.git")
 
 for u in ${AUR[*]}; do
