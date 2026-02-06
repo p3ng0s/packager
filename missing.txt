@@ -2,6 +2,9 @@ python-pytest
 fontforge
 
   -> ckbcomp - testing
+  -> kpmcore
+  -> python-aioquic
+  -> mbedtls
   -> mkinitcpio-openswap - testing
   -> hwinfo - ok
   -> kpmcore>=24.01.75 - ok
