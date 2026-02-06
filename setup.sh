@@ -25,9 +25,10 @@ AUR=("https://aur.archlinux.org/scala.git" \
 	"https://aur.archlinux.org/dislocker.git")
 #	"https://aur.archlinux.org/ruby-evil-winrm.git" "https://aur.archlinux.org/ruby-winrm.git" "https://aur.archlinux.org/ruby-winrm-fs.git")
 
-for u in ${AUR[*]}; do
-	git clone $u
-done
+# For now fuck AUR lets see if we can setup everything properly first then have AUR built differently
+#for u in ${AUR[*]}; do
+#	git clone $u
+#done
 
 REPOS=( $(find -type d | grep -wv "\./\.*" | grep -wv "\.git" | tail -n +2) )
 
