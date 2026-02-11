@@ -4,7 +4,6 @@ mkinitcpio-openswap/
 dracula-gtk-theme/
 scala/
 neo4j-community/
-calamares/
 responder/
 bloodhound/
 python-bloodhound/
@@ -30,4 +29,5 @@ mkinitcpio-openswap/
 repo2/
 */pkg/
 */src/
-*/*.pkg.tar.zst
+*/*.tar.zst
+!calamares/calamares*.pkg.tar.zst
