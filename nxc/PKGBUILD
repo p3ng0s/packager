@@ -1,0 +1,18 @@
+pkgname=nxc-p3ng0s
+pkgver=0.1
+pkgrel=1
+pkgdesc="nxc package for p3ng0s"
+arch=("any")
+url="https://portswigger.net/"
+license=('NONE')
+depends=('java-runtime-common')
+#sha1sums=('SKIP')
+
+build() {
+	curl -s https://api.github.com/repos/Pennyw0rth/NetExec/releases/latest | jq -r '.assets[] | select(.name=="nxc-ubuntu-latest.zip") | .browser_download_url' | xargs curl -L -o nxc-ubuntu-latest.zip
+	unzip nxc-ubuntu-latest.zip
+}
+
+package() {
+	install -D -m755 ./nxc $pkgdir/usr/local/bin/nxc
+}

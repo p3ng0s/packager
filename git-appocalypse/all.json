@@ -1,0 +1,225 @@
+{
+	"pentest_tools": [
+		{
+			"name": "impacket",
+			"url": "https://github.com/fortra/impacket",
+			"install": [
+				"python -m venv .",
+				"./bin/pip install -U .",
+				"find \"./bin\" -type f -executable -exec sed -i \"1s|#!.*python|#!/opt/pentest/impacket/bin/python|\" {} +"
+			]
+		},
+		{
+			"name": "citronx",
+			"url": "https://github.com/p4p1/citronx",
+			"install": [
+				"python -m venv .",
+				"./bin/pip install -U .",
+				"find \"./bin\" -type f -executable -exec sed -i \"1s|#!.*python|#!/opt/pentest/citronx/bin/python|\" {} +"
+			]
+		},
+		{
+			"name": "precompiled-binaries",
+			"url": "https://github.com/jakobfriedl/precompiled-binaries",
+			"install": [
+			]
+		},
+		{
+			"name": "SecLists",
+			"url": "https://github.com/danielmiessler/SecLists",
+			"install": [
+			]
+		},
+		{
+			"name": "ligolo-ng",
+			"url": "https://github.com/Nicocha30/ligolo-ng",
+			"install": [
+				"go build -o agent cmd/agent/main.go",
+				"go build -o proxy cmd/proxy/main.go",
+				"GOOS=windows go build -o agent.exe cmd/agent/main.go"
+			]
+		},
+		{
+			"name": "evil-winrm",
+			"url": "https://github.com/Hackplayers/evil-winrm",
+			"install": [
+				"bundle install --path vendor/bundle"
+			]
+		},
+		{
+			"name": "PetitPotam",
+			"url": "https://github.com/topotam/PetitPotam",
+			"install": [
+			]
+		},
+		{
+			"name": "TREVORspray",
+			"url": "https://github.com/blacklanternsecurity/TREVORspray",
+			"install": [
+			]
+		},
+		{
+			"name": "PowerSploit",
+			"url": "https://github.com/PowerShellMafia/PowerSploit",
+			"install": [
+			]
+		},
+		{
+			"name": "beef",
+			"url": "https://github.com/beefproject/beef",
+			"install": [
+			]
+		},
+		{
+			"name": "nuclei-templates",
+			"url": "https://github.com/projectdiscovery/nuclei-templates",
+			"install": [
+			]
+		},
+		{
+			"name": "MFASweep",
+			"url": "https://github.com/dafthack/MFASweep",
+			"install": [
+			]
+		},
+		{
+			"name": "ruler",
+			"url": "https://github.com/sensepost/ruler",
+			"install": [
+			]
+		},
+		{
+			"name": "pspy",
+			"url": "https://github.com/DominicBreuker/pspy",
+			"install": [
+			]
+		},
+		{
+			"name": "PEASS-ng",
+			"url": "https://github.com/carlospolop/PEASS-ng",
+			"install": [
+			]
+		},
+		{
+			"name": "Shhhloader",
+			"url": "https://github.com/icyguider/Shhhloader",
+			"install": [
+			]
+		},
+		{
+			"name": "kwprocessor",
+			"url": "https://github.com/hashcat/kwprocessor",
+			"install": [
+			]
+		},
+		{
+			"name": "Chimera",
+			"url": "https://github.com/tokyoneon/Chimera",
+			"install": [
+			]
+		},
+		{
+			"name": "PrivKit",
+			"url": "https://github.com/mertdas/PrivKit",
+			"install": [
+			]
+		}
+	],
+	"dev_tools": [
+		{
+			"name": "dwmstat",
+			"url": "https://github.com/p4p1/dwmstat",
+			"install": [
+				"python -m venv .",
+				"./bin/pip install -U .",
+				"find \"./bin\" -type f -executable -exec sed -i \"1s|#!.*python|#!/opt/pentest/citronx/bin/python|\" {} +"
+			]
+		},
+		{
+			"name": "xmenu",
+			"url": "https://github.com/p3ng0s/xmenu",
+			"install": [
+			]
+		},
+		{
+			"name": "dwm-6.2",
+			"url": "https://github.com/p3ng0s/dwm-6.2",
+			"install": [
+			]
+		},
+		{
+			"name": "st-0.8.2",
+			"url": "https://github.com/p3ng0s/st-0.8.2",
+			"install": [
+			]
+		},
+		{
+			"name": "scripts",
+			"url": "https://github.com/p3ng0s/scripts",
+			"install": [
+			]
+		},
+		{
+			"name": "xss_bomb",
+			"url": "https://github.com/p4p1/xss_bomb",
+			"install": [
+			]
+		}
+	],
+	"windows_tools": [
+		{
+			"name": "Rubeus",
+			"url": "https://github.com/GhostPack/Rubeus",
+			"install": [
+			]
+		},
+		{
+			"name": "PrintSpoofer",
+			"url": "https://github.com/itm4n/PrintSpoofer",
+			"install": [
+			]
+		},
+		{
+			"name": "macro_pack",
+			"url": "https://github.com/sevagas/macro_pack",
+			"install": [
+			]
+		},
+		{
+			"name": "SharpEfsPotato",
+			"url": "https://github.com/bugch3ck/SharpEfsPotato",
+			"install": [
+			]
+		},
+		{
+			"name": "mimikatz",
+			"url": "https://github.com/gentilkiwi/mimikatz",
+			"install": [
+			]
+		},
+		{
+			"name": "kekeo",
+			"url": "https://github.com/gentilkiwi/kekeo",
+			"install": [
+			]
+		},
+		{
+			"name": "GMSAPasswordReader",
+			"url": "https://github.com/rvazarkar/GMSAPasswordReader",
+			"install": [
+			]
+		},
+		{
+			"name": "KeeThief",
+			"url": "https://github.com/GhostPack/KeeThief",
+			"install": [
+			]
+		},
+		{
+			"name": "SharpDPAPI",
+			"url": "https://github.com/GhostPack/SharpDPAPI",
+			"install": [
+			]
+		}
+	]
+}

@@ -6,26 +6,29 @@ arch=("any")
 options=('!strip' '!debug')
 url="https://raw.githubusercontent.com/p3ng0s/archlive/refs/heads/main/archlive/airootfs/etc/skel/git_apocalypse.sh"
 license=('NONE')
-depends=('git' 'python')
-source=("git_apocalypse.sh")
-sha1sums=('SKIP')
+depends=('git' 'python' 'python-gitpython')
+source=("tools.json" 'git_apocalypse.py')
+sha1sums=('SKIP' 'SKIP')
 
 build() {
-	chmod +x git_apocalypse.sh
-	./git_apocalypse.sh ${srcdir}
-	cd $srcdir/opt/pentest/impacket
-	python -m venv .
-	./bin/pip install -U .
-	cd $srcdir
+	echo -e "\e[91m                       \e[37m                                  c=====e\e[0m"
+	echo -e "\e[91m                       \e[37m                                     H\e[0m"
+	echo -e "\e[91m   ____________   \e[0m\e[37m                                      _,,_H__\e[0m"
+	echo -e "\e[91m  (__((__((___()\e[0m \e[33m                                      //\e[37m|     |\e[0m"
+	echo -e "\e[91m (__((__((___()()\e[0m\e[33m_____________________________________// \e[37m|\e[31mPULL\e[37m |\e[0m"
+	echo -e "\e[91m(__((__((___()()()\e[0m\e[33m------------------------------------'  \e[37m|_____|\e[0m"
+	echo -e "\e[0m"
+	echo -e "\e[95m ██████╗ ██╗████████╗      █████╗ ██████╗  ██████╗  ██████╗ █████╗ ██╗  ██╗   ██╗██████╗ ███████╗███████╗\e[0m"
+	echo -e "\e[95m██╔════╝ ██║╚══██╔══╝     ██╔══██╗██╔══██╗██╔═══██╗██╔════╝██╔══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔════╝██╔════╝\e[0m"
+	echo -e "\e[95m██║  ███╗██║   ██║        ███████║██████╔╝██║   ██║██║     ███████║██║   ╚████╔╝ ██████╔╝███████╗█████╗  \e[0m"
+	echo -e "\e[95m██║   ██║██║   ██║        ██╔══██║██╔═══╝ ██║   ██║██║     ██╔══██║██║    ╚██╔╝  ██╔═══╝ ╚════██║██╔══╝  \e[0m"
+	echo -e "\e[95m╚██████╔╝██║   ██║███████╗██║  ██║██║     ╚██████╔╝╚██████╗██║  ██║███████╗██║   ██║     ███████║███████╗\e[0m"
+	echo -e "\e[95m ╚═════╝ ╚═╝   ╚═╝╚══════╝╚═╝  ╚═╝╚═╝      ╚═════╝  ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝   ╚═╝     ╚══════╝╚══════╝\e[0m"
+	python git_apocalypse.py -d $srcdir
 }
 
 package() {
 	cp -ra $srcdir/* $pkgdir/
-	# set the correct python interpreter
-	find "${pkgdir}/opt/pentest/impacket/bin" -type f -executable -exec \
-		sed -i "1s|#!.*python|#!/opt/pentest/impacket/bin/python|" {} +
-	#SCRIPTS=( $(ls .) )
-	#for script in ${SCRIPTS[*]}; do
-	#	install -D -m755 ./$script $pkgdir/usr/local/bin/$script
-	#done
+	rm -rf $pkgdir/tools.json
+	rm -rf $pkgdir/git_apocalypse.py
 }
