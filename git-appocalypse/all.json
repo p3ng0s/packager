@@ -10,6 +10,15 @@
 			]
 		},
 		{
+			"name": "Responder",
+			"url": "https://github.com/lgandx/Responder",
+			"install": [
+				"python -m venv .",
+				"./bin/pip install -U .",
+				"find \"./bin\" -type f -executable -exec sed -i \"1s|#!.*python|#!/opt/pentest/Responder/bin/python|\" {} +"
+			]
+		},
+		{
 			"name": "citronx",
 			"url": "https://github.com/p4p1/citronx",
 			"install": [
