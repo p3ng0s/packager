@@ -19,6 +19,15 @@
 			]
 		},
 		{
+			"name": "PRET",
+			"url": "https://github.com/RUB-NDS/PRET",
+			"install": [
+				"python -m venv .",
+				"./bin/pip install -U .",
+				"find \"./bin\" -type f -executable -exec sed -i \"1s|#!.*python|#!/opt/pentest/PRET/bin/python|\" {} +"
+			]
+		},
+		{
 			"name": "precompiled-binaries",
 			"url": "https://github.com/jakobfriedl/precompiled-binaries",
 			"install": [
