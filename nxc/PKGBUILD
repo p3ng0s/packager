@@ -9,7 +9,7 @@ depends=('java-runtime-common')
 #sha1sums=('SKIP')
 
 build() {
-	curl -s https://api.github.com/repos/Pennyw0rth/NetExec/releases/latest | jq -r '.assets[] | select(.name=="nxc-ubuntu-latest.zip") | .browser_download_url' | xargs curl -L -o nxc-ubuntu-latest.zip
+	curl -s https://api.github.com/repos/Pennyw0rth/NetExec/releases/tags/v1.5.0 | jq -r '.assets[] | select(.name=="nxc-ubuntu-latest.zip") | .browser_download_url' | xargs curl -L -o nxc-ubuntu-latest.zip
 	unzip nxc-ubuntu-latest.zip
 }
 
