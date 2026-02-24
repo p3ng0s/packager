@@ -30,7 +30,7 @@
 # ============================================================================
 AUR=("https://aur.archlinux.org/i3lock-fancy-git.git" "https://aur.archlinux.org/dracula-gtk-theme.git"\
 	"https://aur.archlinux.org/emojify.git" "https://aur.archlinux.org/xautolock.git"\
-	)
+	"https://aur.archlinux.org/conquest-git.git")
 # ============================================================================
 
 
@@ -69,7 +69,7 @@ function clean() {
 	rm -rf */pkg/
 	rm -rf ./repo/
 	# remove AUR
-	rm -rf dracula-gtk-theme/ emojify/ i3lock-fancy-git/
+	rm -rf dracula-gtk-theme/ emojify/ i3lock-fancy-git/ xautolock/ conquest-git/
 }
 
 SKIP_AUR=false
