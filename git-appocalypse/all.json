@@ -181,7 +181,7 @@
 			"install": [
 				"python -m venv .",
 				"./bin/pip install -U .",
-				"find \"./bin\" -type f -executable -exec sed -i \"1s|#!.*python|#!/opt/pentest/citronx/bin/python|\" {} +"
+				"find \"./bin\" -type f -executable -exec sed -i \"1s|#!.*python|#!/opt/dev/dwmstat/bin/python|\" {} +"
 			]
 		},
 		{

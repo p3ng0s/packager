@@ -29,8 +29,8 @@
 # The AUR links for some packages ^^
 # ============================================================================
 AUR=("https://aur.archlinux.org/i3lock-fancy-git.git" "https://aur.archlinux.org/dracula-gtk-theme.git"\
-	"https://aur.archlinux.org/emojify.git" "https://aur.archlinux.org/xautolock.git"\
-	"https://aur.archlinux.org/conquest-git.git" "https://aur.archlinux.org/gtk2.git")
+	"https://aur.archlinux.org/emojify.git" "https://aur.archlinux.org/conquest-git.git"\
+	"https://aur.archlinux.org/gtk2.git")
 # ============================================================================
 
 
