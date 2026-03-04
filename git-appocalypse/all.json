@@ -19,6 +19,31 @@
 			]
 		},
 		{
+			"name": "BloodHound.py",
+			"url": "https://github.com/dirkjanm/BloodHound.py",
+			"install": [
+				"python -m venv .",
+				"./bin/pip install -U .",
+				"find \"./bin\" -type f -executable -exec sed -i \"1s|#!.*python|#!/opt/pentest/BloodHound.py/bin/python|\" {} +"
+			]
+		},
+		{
+			"name":"kerbrute",
+			"url":"https://github.com/ropnop/kerbrute",
+			"install": [
+				"make linux"
+			]
+		},
+		{
+			"name":"enum4linux-ng",
+			"url":"https://github.com/cddmp/enum4linux-ng",
+			"install": [
+				"python -m venv .",
+				"./bin/pip install -r ./requirements",
+				"find \"./bin\" -type f -executable -exec sed -i \"1s|#!.*python|#!/opt/pentest/enum4linux-ng/bin/python|\" {} +"
+			]
+		},
+		{
 			"name": "PRET",
 			"url": "https://github.com/RUB-NDS/PRET",
 			"install": [
@@ -45,6 +70,12 @@
 		{
 			"name": "SecLists",
 			"url": "https://github.com/danielmiessler/SecLists",
+			"install": [
+			]
+		},
+		{
+			"name": "statistically-likely-usernames",
+			"url": "https://github.com/insidetrust/statistically-likely-usernames",
 			"install": [
 			]
 		},
