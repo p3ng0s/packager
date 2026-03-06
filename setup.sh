@@ -47,6 +47,23 @@ function usage() {
 	exit -1
 }
 
+function gitappocalypse() {
+	SEL=$(dialog --title "Configure git-appocalypse" \
+		--menu "...." 20 70 15 \
+		1 "Default tools" \
+		2 "All of the tools" \
+		2>&1 >/dev/tty)
+	EXIT_STATUS=$?
+
+	if [ $EXIT_STATUS -ne 0 ]; then
+		echo "Exiting..."
+		break
+	fi
+
+	[ $SEL = 1 ] && return
+	[ $SEL = 2 ] && cp -r $PWD/git-appocalypse/all.json $PWD/git-appocalypse/tools.json
+}
+
 function get_aur() {
 	for u in ${AUR[*]}; do
 		git clone $u
@@ -54,6 +71,7 @@ function get_aur() {
 }
 
 function build() {
+	gitappocalypse
 	REPOS=( $(find -type d | grep -wv "\./\.*" | grep -wv "\.git" | tail -n +2) )
 
 	for d in ${REPOS[*]}; do
