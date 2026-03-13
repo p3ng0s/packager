@@ -57,5 +57,5 @@ if __name__ == "__main__":
     print("\x1b[1;30m[!]\x1bInstalling Windows Tools...")
     for tool in data["windows_tools"]:
         print("\x1b[1;31m[!]\x1b[0m Cloning %s:" % tool["name"])
-        clone_git_repo(tool["url"], args.dir+"/opt/dev/"+tool["name"])
-        install_tool(tool, args.dir+"/opt/dev/"+tool["name"])
+        clone_git_repo(tool["url"], args.dir+"/opt/windows/"+tool["name"])
+        install_tool(tool, args.dir+"/opt/windows/"+tool["name"])

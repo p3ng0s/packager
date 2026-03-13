@@ -39,7 +39,7 @@
 			"url":"https://github.com/cddmp/enum4linux-ng",
 			"install": [
 				"python -m venv .",
-				"./bin/pip install -r ./requirements",
+				"./bin/pip install -r ./requirements.txt",
 				"find \"./bin\" -type f -executable -exec sed -i \"1s|#!.*python|#!/opt/pentest/enum4linux-ng/bin/python|\" {} +"
 			]
 		},
@@ -71,6 +71,9 @@
 			"name": "SecLists",
 			"url": "https://github.com/danielmiessler/SecLists",
 			"install": [
+				"find . -name '*.tar.gz' -exec sh -c 'tar -xzf \"$1\" -C \"$(dirname \"$1\")\" && rm \"$1\"' _ {} \\;",
+				"find . -name '*.zip' -exec sh -c 'unzip -q \"$1\" -d \"$(dirname \"$1\")\" && rm \"$1\"' _ {} \\;",
+				"find . -name '*.gz' ! -name '*.tar.gz' -exec sh -c 'gunzip \"$1\"' _ {} \\;"
 			]
 		},
 		{
