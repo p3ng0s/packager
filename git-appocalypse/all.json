@@ -71,11 +71,11 @@
 			"name": "SecLists",
 			"url": "https://github.com/danielmiessler/SecLists",
 			"install": [
-				"find . -name '*.tar.gz' -exec sh -c 'tar -xzf \"$1\" -C \"$(dirname \"$1\")\" && rm \"$1\"' _ {} \\;",
-				"find . -name '*.tgz' -exec sh -c 'tar -xzf \"$1\" -C \"$(dirname \"$1\")\" && rm \"$1\"' _ {} \\;",
-				"find . -name '*.gz' ! -name '*.tar.gz' -exec sh -c 'gunzip \"$1\"' _ {} \\;",
-				"find . -name '*.bz2' -exec sh -c 'bunzip2 \"$1\"' _ {} \\;",
-				"find . -name '*.zip' -exec sh -c 'unzip -q \"$1\" -d \"$(dirname \"$1\")\" && rm \"$1\"' _ {} \\;"
+				"find Passwords/ -name '*.tar.gz' -exec sh -c 'tar -xzf \"$1\" -C \"$(dirname \"$1\")\" && rm \"$1\"' _ {} \\;",
+				"find Passwords/ -name '*.tgz' -exec sh -c 'tar -xzf \"$1\" -C \"$(dirname \"$1\")\" && rm \"$1\"' _ {} \\;",
+				"find Passwords/ -name '*.gz' ! -name '*.tar.gz' -exec sh -c 'gunzip \"$1\"' _ {} \\;",
+				"find Passwords/ -name '*.bz2' -exec sh -c 'bunzip2 \"$1\"' _ {} \\;",
+				"find Passwords/ -name '*.zip' -exec sh -c 'unzip -q \"$1\" -d \"$(dirname \"$1\")\" && rm \"$1\"' _ {} \\;"
 			]
 		},
 		{
