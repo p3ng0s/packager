@@ -9,7 +9,7 @@ depends=('java-runtime-common')
 #sha1sums=('SKIP')
 
 build() {
-	curl 'https://portswigger-cdn.net/burp/releases/download?product=community&version=2023.6.2&type=Jar' --output burp.jar
+	curl 'https://portswigger.net/burp/releases/download?product=community&version=2026.2.3&type=Jar' --output burp.jar
 	echo -e "#!/bin/bash\njava -jar /opt/pentest/burp.jar" > BurpSuitePro
 }
 
