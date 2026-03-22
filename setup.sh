@@ -32,15 +32,18 @@ AUR=("https://aur.archlinux.org/i3lock-fancy-git.git" "https://aur.archlinux.org
 	"https://aur.archlinux.org/emojify.git" "https://aur.archlinux.org/conquest-git.git"\
 	"https://aur.archlinux.org/gtk2.git")
 # ============================================================================
-
+ENABLE_ALL=false
+SKIP_AUR=false
 
 function usage() {
 	echo -e "\e[1;31mUsage:\e[m" 1>&2
+	echo "$0 -a -> All Tools." 1>&2
 	echo "$0 -b -> Build only." 1>&2
 	echo "$0 -c -> Clean" 1>&2
 	echo "$0 -s -> Skip the AUR" 1>&2
 	echo -e "\e[1;31mExamples:\e[m" 1>&2
 	echo "$0" 1>&2
+	echo "$0 -a" 1>&2
 	echo "$0 -b" 1>&2
 	echo "$0 -c" 1>&2
 	echo "$0 -s -b" 1>&2
@@ -48,6 +51,10 @@ function usage() {
 }
 
 function gitappocalypse() {
+	if [ "$ENABLE_ALL" = true ]; then
+		cp -r $PWD/git-appocalypse/all.json $PWD/git-appocalypse/tools.json
+		return
+	fi
 	SEL=$(dialog --title "Configure git-appocalypse" \
 		--menu "...." 20 70 15 \
 		1 "Default tools" \
@@ -90,10 +97,11 @@ function clean() {
 	rm -rf dracula-gtk-theme/ emojify/ i3lock-fancy-git/ xautolock/ conquest-git/ gtk2/
 }
 
-SKIP_AUR=false
-
-while getopts "bcsr" opt; do
+while getopts "abcsr" opt; do
 	case $opt in
+		a)
+			ENABLE_ALL=true
+			;;
 		b)
 			build
 			;;
