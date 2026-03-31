@@ -19,6 +19,12 @@
 			]
 		},
 		{
+			"name":"CS-Situational-Awareness-BOF",
+			"url":"https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master",
+			"install": [
+			]
+		},
+		{
 			"name": "BloodHound.py",
 			"url": "https://github.com/dirkjanm/BloodHound.py",
 			"install": [
