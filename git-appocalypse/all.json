@@ -19,6 +19,15 @@
 			]
 		},
 		{
+			"name": "Seth",
+			"url": "https://github.com/SySS-Research/Seth",
+			"install": [
+				"python -m venv .",
+				"./bin/pip install -r ./requirements.txt",
+				"find \"./bin\" -type f -executable -exec sed -i \"1s|#!.*python|#!/opt/pentest/Seth/bin/python|\" {} +"
+			]
+		},
+		{
 			"name":"CS-Situational-Awareness-BOF",
 			"url":"https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master",
 			"install": [
