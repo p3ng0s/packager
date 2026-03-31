@@ -79,7 +79,7 @@ function get_aur() {
 
 function build() {
 	gitappocalypse
-	REPOS=( $(find -type d | grep -wv "\./\.*" | grep -wv "\.git" | tail -n +2) )
+	REPOS=( $(find -type d | grep -wv "\./\.*" | grep -wv "\.git" | grep -wv "\.img" | tail -n +2) )
 
 	for d in ${REPOS[*]}; do
 		SAVE_TMP=$(pwd)
