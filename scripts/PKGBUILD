@@ -16,6 +16,11 @@ build() {
 package() {
 	SCRIPTS=( $(ls .) )
 	for script in ${SCRIPTS[*]}; do
+		if echo $script | grep "README" &> /dev/null;then
+			continue
+		elif echo $script | grep "img" &> /dev/null;then
+			continue
+		fi
 		install -D -m755 ./$script $pkgdir/usr/local/bin/$script
 	done
 }
