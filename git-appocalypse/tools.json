@@ -22,9 +22,19 @@
 			"name": "BloodHound.py",
 			"url": "https://github.com/dirkjanm/BloodHound.py",
 			"install": [
+				"git checkout bloodhound-ce",
 				"python -m venv .",
 				"./bin/pip install -U .",
 				"find \"./bin\" -type f -executable -exec sed -i \"1s|#!.*python|#!/opt/pentest/BloodHound.py/bin/python|\" {} +"
+			]
+		},
+		{
+			"name":"conquest-profile-generator",
+			"url":"https://github.com/matro7sh/conquest-profile-generator",
+			"install": [
+				"python -m venv .",
+				"./bin/pip install -r ./requirements.txt",
+				"find \"./bin\" -type f -executable -exec sed -i \"1s|#!.*python|#!/opt/pentest/conquest-profile-generator/bin/python|\" {} +"
 			]
 		},
 		{
