@@ -270,6 +270,12 @@
 			]
 		},
 		{
+			"name": "ThreatCheck",
+			"url": "https://github.com/rasta-mouse/ThreatCheck",
+			"install": [
+			]
+		},
+		{
 			"name": "mimikatz",
 			"url": "https://github.com/gentilkiwi/mimikatz",
 			"install": [
