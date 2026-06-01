@@ -103,6 +103,53 @@
 			]
 		},
 		{
+			"name":"Certipy",
+			"url": "https://github.com/ly4k/Certipy",
+			"install": [
+				"python -m venv .",
+				"./bin/pip install certipy-ad",
+				"find \"./bin\" -type f -executable -exec sed -i \"1s|#!.*python|#!/opt/pentest/Certipy/bin/python|\" {} +"
+			]
+		},
+		{
+			"name":"PKINITtools",
+			"url": "https://github.com/dirkjanm/PKINITtools",
+			"install": [
+				"python -m venv .",
+				"./bin/pip install impacket minikerberos",
+				"find \"./bin\" -type f -executable -exec sed -i \"1s|#!.*python|#!/opt/pentest/PKINITtools/bin/python|\" {} +"
+			]
+		},
+		{
+			"name":"krbrelayx",
+			"url": "https://github.com/dirkjanm/krbrelayx",
+			"install": [
+				"python -m venv .",
+				"./bin/pip install impacket ldap3 dnspython",
+				"find \"./bin\" -type f -executable -exec sed -i \"1s|#!.*python|#!/opt/pentest/krbrelayx/bin/python|\" {} +"
+			]
+		},
+		{
+			"name":"bloodyAD",
+			"url": "https://github.com/CravateRouge/bloodyAD",
+			"install": [
+				"python -m venv .",
+				"./bin/pip install -r ./requirements.txt",
+				"./bin/pip install -e .",
+				"find \"./bin\" -type f -executable -exec sed -i \"1s|#!.*python|#!/opt/pentest/bloodyAD/bin/python|\" {} +"
+			]
+		},
+		{
+			"name":"pywhisker",
+			"url": "https://github.com/ShutdownRepo/pywhisker",
+			"install": [
+				"python -m venv .",
+				"./bin/pip install -r ./requirements.txt",
+				"./bin/pip install -U .",
+				"find \"./bin\" -type f -executable -exec sed -i \"1s|#!.*python|#!/opt/pentest/pywhisker/bin/python|\" {} +"
+			]
+		},
+		{
 			"name": "statistically-likely-usernames",
 			"url": "https://github.com/insidetrust/statistically-likely-usernames",
 			"install": [
