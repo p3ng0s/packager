@@ -261,6 +261,13 @@
 			]
 		},
 		{
+			"name": "osslsigncode",
+			"url": "https://github.com/mtrojnar/osslsigncode.git",
+			"install": [
+				"mkdir build && cd build && cmake -S .. && cmake --build ."
+			]
+		},
+		{
 			"name": "xmenu",
 			"url": "https://github.com/p3ng0s/xmenu",
 			"install": [
